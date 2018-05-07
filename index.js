@@ -1,10 +1,11 @@
-import { AppRegistry } from 'react-native';
+import { AppRegistry, Platform, Image } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 import HomeComponent from './src/components/HomeComponent';
 import InfoComponent from './src/components/InfoComponent';
 import SettingsComponent from './src/components/SettingsComponent';
 import CloudComponent from './src/components/CloudComponent';
 import { Home, Info, Settings, Cloud } from './src/components/screenNames';
+
 
 const routeConfigs = {
     Home: {
@@ -20,20 +21,20 @@ const routeConfigs = {
         screen: CloudComponent,
     },
 };
-const tabNavigatorConfig = {    
+
+const tabNavigatorConfig = { 
     tabBarPosition: 'bottom',
     animationEnabled: true,
     swipeEnabled: true,
     tabBarOptions: {
         activeTintColor: 'blue',
-        labelStyle: {
-            fontSize: 13,
-        },
         style: {
-            backgroundColor: 'lightgray',
-            padding: -10
+           backgroundColor: '#c3cfe2',
+            padding: 1,
+            height: 60,
         },    
-        // showLabel: false    
+         showIcon: true,   
+          showLabel: false
     },    
     // order: [Settings, Home, Cloud, Info],
 };

@@ -2,40 +2,42 @@ import React, { Component } from 'react';
 import { DetailScreen, ThirdScreen } from './screenNames';
 import Button from 'react-native-button';
 import {
-    Text, View, Image
+    Text, View, Image,StyleSheet,Platform
 } from 'react-native';
-const backgroundColor = '#007256';
+const backgroundColor = '#e97600';
 
 export default class InfoComponent extends Component {
     static navigationOptions = ({ navigation }) => {        
-        let tabBarLabel = 'Info';
-        let tabBarIcon = () => (
+        const tabBarIcon = () => (
             <Image
-                source={require('../images/info-icon.png')}
-                style={{ width: 26, height: 26, tintColor: backgroundColor }}
+                source={require('../images/personel.png')}
+                style={{ width: 26, height: 31, tintColor: backgroundColor }}
             />
         );
-        return { tabBarLabel, tabBarIcon };
+        return { tabBarIcon };
     }
-
+   
     render() {
-        return (<View style={{
+        return (
+        <View style={{
             flex: 1,
             backgroundColor: backgroundColor,
-            alignItems: 'center',
             justifyContent: 'center'
         }}>
             <Text style={{ fontWeight: 'bold', fontSize: 22, color: 'white' }}>
-                This is Info Screen
+                Personel
             </Text>  
-            <Button
-                containerStyle={{ padding: 10, margin: 20, width: 200, height: 45, borderRadius: 10, backgroundColor: 'darkviolet' }}
-                style={{ fontSize: 18, color: 'white' }}
-                onPress={() => {                                        
-                    this.props.navigation.goBack();
-                }}>
-                Back to Home
-            </Button>          
+           
+                     
         </View>);
     }
 }
+
+const style = StyleSheet.create({
+        ali: {
+            width: 100,
+    height: 100,
+    borderRadius: 100/2,
+    backgroundColor: 'red'
+        }
+});
